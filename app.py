@@ -30,6 +30,26 @@ h1, h2, h3 {letter-spacing: -0.02em;}
 </style>
 """, unsafe_allow_html=True)
 
+# Protección simple para la DEMO del portal cliente.
+# Configure CLIENT_APP_PASSWORD en Streamlit Cloud > Settings > Secrets.
+clave_cliente = st.secrets.get("CLIENT_APP_PASSWORD", "")
+if clave_cliente:
+    if "cliente_autorizado" not in st.session_state:
+        st.session_state.cliente_autorizado = False
+    if not st.session_state.cliente_autorizado:
+        st.title("SITIO Farmacovigilancia")
+        st.subheader("Acceso al portal")
+        entrada = st.text_input("Contraseña", type="password", key="clave_cliente")
+        if st.button("Entrar", type="primary"):
+            if entrada == clave_cliente:
+                st.session_state.cliente_autorizado = True
+                st.rerun()
+            else:
+                st.error("Contraseña incorrecta.")
+        st.stop()
+else:
+    st.warning("DEMO PÚBLICA: no hay contraseña configurada. No use datos reales.")
+
 # Datos 100% ficticios para la demo pública.
 empresa = "Demo Pharma Paraguay S.A."
 trabajos = [
