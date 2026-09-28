@@ -1,31 +1,38 @@
-# SITIO Farmacovigilancia · Clientes
+# SITIO-SurveillanceHelper · Portal del cliente
 
-Demo en Streamlit del portal para empresas farmacéuticas y sus Responsables de Farmacovigilancia (RFV).
+Demo pública de **SITIO-SurveillanceHelper**, plataforma y servicio gestionado de farmacovigilancia de SITIO BioMedical Solutions.
 
-## Objetivo
-Que el cliente pueda responder rápidamente:
-- ¿Estoy en regla?
-- ¿Necesita SITIO algo de mí?
-- ¿Qué está haciendo SITIO?
-- ¿Qué debe revisar o aprobar mi RFV?
-- ¿Cómo envío una posible reacción adversa o pido ayuda?
+## Qué demuestra
+- Estado regulatorio y BPFV.
+- Trabajo que SITIO realiza por el cliente.
+- Soporte al Responsable de Farmacovigilancia (RFV).
+- Casos y seguimiento.
+- Documentos y evidencias.
+- Solicitud de servicios.
+- Canal compartible para que visitadores, colaboradores o profesionales reporten información de seguridad en texto libre.
 
-## Ejecutar
+## Canal de seguridad
+La misma aplicación muestra un formulario simplificado si se abre con:
+
+```
+https://TU-APP.streamlit.app/?canal=demo-pharma
+```
+
+En producción cada cliente tendrá un enlace/QR propio.
+
+## Secrets de la demo
+En Streamlit Cloud > Settings > Secrets:
+
+```toml
+CLIENT_APP_PASSWORD = "una-contraseña-larga"
+PUBLIC_APP_URL = "https://TU-APP.streamlit.app"
+```
+
+## Ejecutar localmente
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Contraseña de demo
-En Streamlit Cloud añada en **Settings > Secrets**:
-
-```toml
-CLIENT_APP_PASSWORD = "una-contraseña-larga"
-```
-
-La contraseña no debe guardarse en GitHub.
-
 ## Seguridad
-Este repositorio es público y contiene exclusivamente código y datos ficticios. No subir secretos, credenciales, documentos reales, datos de pacientes ni información confidencial.
-
-La contraseña simple es adecuada solo para la demo. La versión de producción requerirá autenticación real, aislamiento por cliente y controles de acceso antes de utilizar datos reales.
+Repositorio público + datos ficticios. No subir secretos, datos de pacientes, documentos regulatorios reales ni información confidencial. La contraseña simple es solo para demostración.
