@@ -1,6 +1,6 @@
 # SITIO Farmacovigilancia · Clientes
 
-Demo pública en Streamlit del portal para empresas farmacéuticas y sus Responsables de Farmacovigilancia (RFV).
+Demo en Streamlit del portal para empresas farmacéuticas y sus Responsables de Farmacovigilancia (RFV).
 
 ## Objetivo
 Que el cliente pueda responder rápidamente:
@@ -16,7 +16,16 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+## Contraseña de demo
+En Streamlit Cloud añada en **Settings > Secrets**:
+
+```toml
+CLIENT_APP_PASSWORD = "una-contraseña-larga"
+```
+
+La contraseña no debe guardarse en GitHub.
+
 ## Seguridad
 Este repositorio es público y contiene exclusivamente código y datos ficticios. No subir secretos, credenciales, documentos reales, datos de pacientes ni información confidencial.
 
-La versión de producción requerirá autenticación y aislamiento por cliente antes de utilizar datos reales.
+La contraseña simple es adecuada solo para la demo. La versión de producción requerirá autenticación real, aislamiento por cliente y controles de acceso antes de utilizar datos reales.
